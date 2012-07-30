@@ -2,16 +2,16 @@ package controllers
 
 import play.api._
 import play.api.mvc._
-import com.codahale.jerkson.Json
+import viewUtil.JsonUtil
 
-object Application extends Controller {
+object Application extends Controller with JsonUtil {
   
   def index = Action {
     Ok(views.html.index("Your new application is ready."))
   }
 
-  def json = Action {
-    Ok(Json.generate(Map("first" -> List(1,2,3)))).as("appliation/json")
+  def json = jsonApi("json") {
+     List[Int](1,2,3)
   }
   
 }
