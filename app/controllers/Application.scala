@@ -12,7 +12,7 @@ object Application extends Controller with JsonUtil {
   }
 
   def json = Action{ //jsonApi("json") {
-    Ok(generate[Message](Message("those bastards"))).as("text/javascript")
+    Ok(generate[Message](Message("omg they killed kenny, you bastards"))).as("text/javascript")
   }
 
 }
